@@ -20,6 +20,9 @@ formulario.addEventListener('submit', function (evento) {
     const senha = campoSenha.value;
     const senhaConfirmar = campoConfirmar.value;
 
+    function emailValido(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
 
     if (!nome || !email || !disciplina || !senha || !senhaConfirmar) {
         mostrarMensagem(mensagem, 'Preencha todos os campos.', false);
