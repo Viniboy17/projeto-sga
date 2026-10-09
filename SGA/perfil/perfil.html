@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>SGA · Meu perfil</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="../global/global.css">
+        <link rel="stylesheet" href="perfil.css">
+    </head>
+
+    <body>
+        <div class="layout">
+            <nav class="menu">
+                <div class="logo">
+                    <b>SGA</b>
+                    <small>Docente</small>
+                </div>
+
+                <a href="../home/home.html">
+                    <i class="bi bi-grid"></i> Minhas turmas
+                </a>
+
+                <a href="perfil.html" class="ativo">
+                    <i class="bi bi-person"></i> Meu perfil
+                </a>
+
+                <a href="../login/login.html" id="sair">
+                    <i class="bi bi-box-arrow-left"></i> Sair
+                </a>
+
+                <div class="rodape-menu">
+                    <div class="avatar"></div>
+                    <span id="nomeLateral"></span>
+                </div>
+            </nav>
+
+            <div class="corpo">
+                <header>
+                    <div>
+                        <h2>Meu perfil</h2>
+                        <small>Atualize sua foto e seus dados cadastrais</small>
+                    </div>
+                    <span class="avatar"></span>
+                </header>
+
+                <section id="conteudo">
+                    <form class="cartao" id="form-perfil" novalidate>
+                        <div class="foto">
+                            <div class="foto-avatar">
+                                <span class="avatar avatar-grande" id="avatarGrande"></span>
+                                <span class="foto-camera"><i class="bi bi-camera-fill"></i></span>
+                            </div>
+
+                            <div class="foto-info">
+                                <h3>Foto do perfil</h3>
+                                <p>PNG ou JPG, até 5 MB.<br>Recomendado 400x400 px.</p>
+                                <div class="foto-botoes">
+                                    <button type="button" class="btn-perfil btn-azul" id="btnAlterarFoto">Alterar foto</button>
+                                    <button type="button" class="btn-perfil btn-contorno" id="btnRemoverFoto">Remover</button>
+                                </div>
+                                <input type="file" id="inputFoto" accept="image/png, image/jpeg" style="display: none;">
+                            </div>
+                        </div>
+
+                        <hr class="divisor">
+
+                        <label for="nome">Nome completo</label>
+                        <input class="campo" id="nome" type="text">
+
+                        <label for="email">E-mail institucional</label>
+                        <input class="campo" id="email" type="email">
+
+                        <label for="disc">Disciplina principal</label>
+                        <input class="campo" id="disc" type="text">
+                    </form>
+
+                    <button class="btn-perfil btn-azul btn-salvar" type="submit" form="form-perfil">Salvar</button>
+                </section>
+            </div>
+        </div>
+
+        <script src="../global/global.js"></script>
+        <script src="perfil.js"></script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>SGA · Cadastro</title>
+        <link rel="stylesheet" href="../global/global.css">
+        <link rel="stylesheet" href="cadastro.css">
+    </head>
+
+    <body class="auth">
+        <aside>
+            <div>
+                <h1>SGA</h1>
+                <small>Sistema de Gestão Acadêmica · Área do Docente</small>
+            </div>
+            <p>Crie sua conta de professor para começar a lançar notas.</p>
+        </aside>
+
+        <main>
+            <form class="caixa" id="form">
+                <h2>Criar conta de professor</h2>
+                <small class="subtitulo">Preencha os dados abaixo para se cadastrar</small>
+
+                <label for="nome">Nome completo</label>
+                <input class="campo" id="nome" placeholder="Ana Paula Menezes">
+
+                <label for="email">E-mail institucional</label>
+                <input class="campo" id="email" type="email" placeholder="professor@maisunifacisa.com.br">
+
+                <label for="disc">Disciplina principal</label>
+                <input class="campo" id="disc" placeholder="Linguagem Interpretada">
+
+                <label for="senha">Senha</label>
+                <input class="campo" id="senha" type="password" placeholder="Mínimo de 8 caracteres">
+
+                <label for="conf">Confirmar senha</label>
+                <input class="campo" id="conf" type="password">
+
+                <p class="msg" id="msg" role="alert"></p>
+                <button class="btn" type="submit">Cadastrar</button>
+
+                <p class="rodape">Já tem conta? <a class="link" href="../login/login.html">Entrar</a></p>
+            </form>
+        </main>
+
+        <script src="../global/global.js"></script>
+        <script src="cadastro.js"></script>
+    </body>
+</html>

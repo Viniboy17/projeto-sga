@@ -1,0 +1,312 @@
+/* ---------- 1. VARIÁVEIS ---------- */
+:root {
+    --marinho: #112D60;
+    --azul: #186FD9;
+    --claro: #DFECFA;
+    --verde: #279E5B;
+    --verm: #E63946;
+    --ambar: #F0A019;
+    --texto: #212529;
+    --cinza: #6C757D;
+}
+
+
+/* ---------- 2. RESET E BASE ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Inter, Roboto, sans-serif;
+    color: var(--texto);
+    background: #EAF2FC;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--marinho);
+}
+
+
+/* ---------- 3. COMPONENTES REUTILIZÁVEIS ---------- */
+
+/* Botão principal */
+.btn {
+    background: var(--azul);
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover {
+    filter: brightness(.92);
+}
+
+/* Formulário: rótulo e campo de texto */
+label {
+    display: block;
+    font-size: .8rem;
+    font-weight: 700;
+    margin: 14px 0 6px;
+}
+
+.campo {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cfdcec;
+    border-radius: 8px;
+    background: var(--claro);
+}
+
+.campo:focus,
+.btn:focus-visible {
+    outline: 2px solid var(--azul);
+    outline-offset: 2px;
+}
+
+/* Mensagem de erro/sucesso (a cor de sucesso é definida via JS) */
+.msg {
+    font-size: .85rem;
+    color: var(--verm);
+    min-height: 1.2em;
+    margin-top: 10px;
+}
+
+/* Textos auxiliares e links */
+.subtitulo {
+    color: var(--cinza);
+}
+
+.link {
+    color: var(--azul);
+    font-weight: 600;
+    font-size: .85rem;
+    text-decoration: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.rodape {
+    text-align: center;
+    font-size: .85rem;
+    color: var(--cinza);
+}
+
+
+/* ---------- 4. TELAS DE AUTENTICAÇÃO ---------- */
+
+/* Estrutura: painel lateral (2fr) + área do formulário (3fr) */
+.auth {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    min-height: 100vh;
+}
+
+/* Painel lateral azul-marinho */
+.auth aside {
+    background: var(--marinho);
+    color: #fff;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth aside h1 {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.auth aside p {
+    font-weight: 700;
+    max-width: 220px;
+    position: relative;
+}
+
+
+/* Área do formulário */
+.auth main {
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.auth .caixa {
+    background: #fff;
+    border-radius: 16px;
+    padding: 36px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 4px 18px #112d6014;
+}
+
+.auth .btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Telas pequenas: esconde o painel lateral */
+@media (max-width: 760px) {
+    .auth {
+        grid-template-columns: 1fr;
+    }
+
+    .auth aside {
+        display: none;
+    }
+}
+
+
+/* ---------- 5. PAINEL DO DOCENTE (HOME E PERFIL) ---------- */
+
+/* Estrutura: menu lateral (230px) + corpo */
+.layout {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    min-height: 100vh;
+}
+
+/* Menu lateral */
+.menu {
+    background: var(--marinho);
+    color: #fff;
+    padding: 20px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    padding: 4px 12px 20px;
+}
+
+.logo b {
+    font-size: 1.4rem;
+}
+
+.logo small {
+    opacity: .7;
+}
+
+/* Itens do menu (podem ser <button> ou <a>) */
+.menu button,
+.menu a {
+    display: block;
+    background: none;
+    border: 0;
+    color: #cfd9ea;
+    text-align: left;
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.menu button i,
+.menu a i {
+    margin-right: 8px;
+}
+
+.menu button:hover,
+.menu a:hover {
+    background: #1c3f78;
+}
+
+.menu button.ativo,
+.menu a.ativo {
+    background: var(--azul);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Rodapé do menu: avatar + nome do professor */
+.rodape-menu {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: .85rem;
+    padding: 8px;
+}
+
+/* Cabeçalho do corpo */
+.corpo header {
+    background: #fff;
+    padding: 14px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dbe6f4;
+}
+
+.corpo header small {
+    color: var(--cinza);
+}
+
+#conteudo {
+    padding: 24px 28px;
+}
+
+/* Avatar circular (foto ou ícone) */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--azul);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    user-select: none;
+    line-height: 1;
+}
+
+.rodape-menu .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: .82rem;
+}
+
+button.avatar {
+    cursor: pointer;
+}
+
+/* Telas pequenas: menu vira uma faixa no topo */
+@media (max-width: 700px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .menu {
+        position: static;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .rodape-menu {
+        display: none;
+    }
+}
